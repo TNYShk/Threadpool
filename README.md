@@ -1,2 +1,4 @@
-# Threadpool
-Threadpool implementation
+# Threadpool Project
+
+* SDK/JDK 1.8+ 
+ThreadPool project 

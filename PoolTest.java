@@ -59,7 +59,7 @@ public class PoolTest {
         Future<Long> future = tp.submit(() -> {
             long sum = 0;
             int block = 5000;
-            while (--block > 0) ;
+            while (--block > 0); //busy wait
 
             for (long i = 0; i <= 10000000L; ++i) {
                 sum += i;
@@ -67,7 +67,7 @@ public class PoolTest {
             return sum;
         }, ThreadPool.Priority.HIGH);
         System.out.println((future.get(20L, TimeUnit.SECONDS)));
-        assertTrue(f1.get().equals(1));
+        Assertions.assertTrue(f1.get().equals(1));
         assertTrue(f2.get().equals(2));
         assertTrue(f3.get().equals(3));
 
@@ -239,7 +239,7 @@ public class PoolTest {
     @Test
     void decreaseEmptyCtorTest() throws InterruptedException {
         ThreadPool tp = new ThreadPool();
-        assertTrue(tp.threadsList.size() == 8);
+        assertTrue(tp.threadsList.size() == 16);
 
 
         for (int i = 0; i < 20; ++i) {
