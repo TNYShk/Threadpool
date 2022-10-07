@@ -2,7 +2,7 @@ package il.co.ilrd.threadpool;
 /*
  * ThreadPool WS by Tanya Shk
  * April 24,2022,
- * reviewed by Adrian A.A.concurrency
+ * reviewed by A.A.concurrency
  */
 
 
